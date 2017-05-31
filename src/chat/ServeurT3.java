@@ -1,4 +1,4 @@
-package Chat;
+package chat;
 
 import ChatAuth.ServiceAuth;
 import ChatAuth.ServiceAuthImpl;
