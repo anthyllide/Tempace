@@ -22,7 +22,6 @@ public class ServiceAuthImpl implements ServiceAuth {
      * @return User logged or null if not logged
      * @throws RemoteException
      */
-    @Override
     public User authentification(String login, String password) throws RemoteException {
         User u = new User(login, password);
 
@@ -47,7 +46,6 @@ public class ServiceAuthImpl implements ServiceAuth {
      * @return
      * @throws RemoteException
      */
-    @Override
     public boolean desauthentification(User user) throws RemoteException {
         boolean isDesauth = false;
         if(this.loggedUsers.contains(user)) {
