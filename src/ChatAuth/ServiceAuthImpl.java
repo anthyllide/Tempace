@@ -10,11 +10,13 @@ public class ServiceAuthImpl implements ServiceAuth {
 
     @Override
     public User authentification(String login, String password) throws RemoteException {
+    	System.out.println("Try to auth");
         User u = new User(login, password);
-        if(this.userExist(u)) {
-
+        if(this.userExist(u)) 
+        {
+        	System.out.println("TOTO EXISTE");
         }
-        return null;
+        return u;
     }
 
     @Override
@@ -24,8 +26,7 @@ public class ServiceAuthImpl implements ServiceAuth {
 
     private boolean userExist(User u) throws RemoteException{
         boolean exist = false;
-
-        if(u.getLogin() == "toto") {
+        if(u.getLogin().contentEquals("toto")) {
             exist = true;
         }
 
