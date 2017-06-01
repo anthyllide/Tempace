@@ -10,12 +10,11 @@ import java.rmi.server.UnicastRemoteObject;
 public class ServeurT3 {
 
 
+
     public static void main(String[] args) throws Exception {
         // write your code here
 
         ServiceAuthImpl service = new ServiceAuthImpl();
-
-
         ServiceAuth stub;
 
         stub = (ServiceAuth) UnicastRemoteObject.exportObject(service, 0);
@@ -24,5 +23,7 @@ public class ServeurT3 {
         registry.bind("Auth", stub);
 
         System.out.println("Service start");
+        System.out.println("Test writing");
+
     }
 }
