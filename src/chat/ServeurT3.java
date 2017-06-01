@@ -23,7 +23,6 @@ public class ServeurT3 {
         registry.bind("Auth", stub);
 
         System.out.println("Service start");
-        System.out.println("Test writing");
 
     }
 }
