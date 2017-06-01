@@ -16,6 +16,6 @@ public class Client
 		ServiceAuth service;
 		service = (ServiceAuth) registry.lookup("Auth");
 		
-		User user = service.authentification("toto", " ");
+		User user = service.authentification("toto", "");
 	}
 }
