@@ -1,5 +1,4 @@
 # IntelliJ
 /out/
 .idea/
-
-tempace.iml
+/target/
