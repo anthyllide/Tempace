@@ -1,9 +1,11 @@
 package Common;
 
+import java.io.Serializable;
+
 /**
  * Created by bouguerr on 31/05/2017.
  */
-public class User {
+public class User implements Serializable {
     private String login;
     private String password;
     private boolean isLogged;
