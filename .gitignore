@@ -1,10 +1,6 @@
 # IntelliJ
 /out/
 .idea/
-<<<<<<< Updated upstream
 /target/
-=======
-
-tempace.iml
 /target/
->>>>>>> Stashed changes
+.settings/
