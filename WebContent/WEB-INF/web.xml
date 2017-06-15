@@ -3,7 +3,7 @@
 	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 	version="3.0">
-	<display-name>CrunchifyRESTJerseyExample</display-name>
+	<display-name>Tempace</display-name>
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 		<welcome-file>index.htm</welcome-file>
@@ -12,7 +12,14 @@
 		<welcome-file>default.htm</welcome-file>
 		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
- 
+	<servlet>
+		<servlet-name>controler</servlet-name>
+		<servlet-class>controler.Controler</servlet-class>
+		<init-param>
+			<param-name>urlAuth</param-name>
+			<param-value>/WEB-INF/auth.jsp</param-value>
+		</init-param>
+	</servlet>
 	<servlet>
 		<servlet-name>Jersey Web Application</servlet-name>
 		<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
@@ -21,5 +28,9 @@
 	<servlet-mapping>
 		<servlet-name>Jersey Web Application</servlet-name>
 		<url-pattern>/tempace/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>controler</servlet-name>
+		<url-pattern>/front/*</url-pattern>
 	</servlet-mapping>
 </web-app>

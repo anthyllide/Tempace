@@ -34,9 +34,23 @@
     <artifactId>jersey-servlet</artifactId>
     <version>1.17.1</version>
 </dependency>
-	</dependencies>
+      <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>3.1.0</version>
+  </dependency>
+      <dependency>
+          <groupId>javax.xml.ws</groupId>
+          <artifactId>jaxws-api</artifactId>
+          <version>2.2.6</version>
+      </dependency>
+      <dependency>
+          <groupId>org.apache.tomcat</groupId>
+          <artifactId>tomcat-juli</artifactId>
+          <version>8.0.15</version>
+      </dependency>
+  </dependencies>
   <packaging>war</packaging>
-
   <build>
         <plugins>
             <plugin>
@@ -47,7 +61,7 @@
                     <webXml>WebContent\WEB-INF\web.xml</webXml>
                 </configuration>
             </plugin>
-			<plugin>
+            <plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>2.3.2</version>
 				<configuration>
