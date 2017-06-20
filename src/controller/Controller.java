@@ -1,4 +1,4 @@
-package controler;
+package controller;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
@@ -12,12 +12,14 @@ import java.io.IOException;
 /**
  * Created by gonzalal on 14/06/17.
  */
-public class Controler extends HttpServlet {
+public class Controller extends HttpServlet {
     private String urlAuth;
+    private String urlListMessage;
 
     // INIT
     public void init() throws ServletException {
         urlAuth = getServletConfig().getInitParameter("urlAuth");
+        urlListMessage = getServletConfig().getInitParameter("urlListMessage");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws
@@ -37,6 +39,8 @@ public class Controler extends HttpServlet {
         // Exécution action
         if (methode.equals("get") && action.equals("/auth")) {
             doAuth(request, response);
+        }else if (methode.equals("get") && action.equals("/listMessage")){
+            doListMessage(request, response);
         }
     }
 
@@ -67,9 +71,15 @@ public class Controler extends HttpServlet {
     }
 
     protected void doValiderAuth(HttpServletRequest request,
-                          HttpServletResponse response) throws ServletException, IOException {
+                                 HttpServletResponse response) throws ServletException, IOException {
 
         response.sendRedirect("/tempace/api/login");
 
+    }
+
+    protected void doListMessage(HttpServletRequest request,
+                          HttpServletResponse response) throws ServletException, IOException {
+
+        loadJSP(urlListMessage, request, response);
     }
 }
